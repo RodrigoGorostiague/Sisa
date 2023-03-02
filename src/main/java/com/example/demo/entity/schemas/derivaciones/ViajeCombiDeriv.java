@@ -7,9 +7,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "derivaciones", name = "viajecombi")
-public class ViajeCombi {
+public class ViajeCombiDeriv {
     @EmbeddedId
-    private ViajeCombiPK id;
+    private ViajeCombiDerivPK id;
     @Column(name = "reservasida")
     private Integer reservasIda;
     @Column(name = "reservasvuelta")
@@ -18,11 +18,11 @@ public class ViajeCombi {
     @Column(name = "pertenenciacombi")
     private String pertenenciaCombi;
 
-    public ViajeCombiPK getId() {
+    public ViajeCombiDerivPK getId() {
         return id;
     }
 
-    public void setId(ViajeCombiPK id) {
+    public void setId(ViajeCombiDerivPK id) {
         this.id = id;
     }
 

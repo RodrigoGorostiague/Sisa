@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Embeddable
-public class ViajeCombiPK implements Serializable {
+public class ViajeCombiDerivPK implements Serializable {
     private Date fecha;
     private String destino;
 
