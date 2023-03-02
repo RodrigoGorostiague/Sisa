@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -11,16 +11,16 @@ import java.io.Serializable;
 public class DevolLineaAlmGralPK implements Serializable {
     @OneToOne
     @JoinColumn(name = "nrodevol", referencedColumnName = "nrodevol")
-    private DevolLineaAlmGral devolLineaAlmGral;
+    private DevolAlmGral devolAlmGral;
     @Column(name = "nrolinea")
     private Integer nroLinea;
 
-    public DevolLineaAlmGral getDevolLineaAlmGral() {
-        return devolLineaAlmGral;
+    public DevolAlmGral getDevolAlmGral() {
+        return devolAlmGral;
     }
 
-    public void setDevolLineaAlmGral(DevolLineaAlmGral devolLineaAlmGral) {
-        this.devolLineaAlmGral = devolLineaAlmGral;
+    public void setDevolAlmGral(DevolAlmGral devolAlmGral) {
+        this.devolAlmGral = devolAlmGral;
     }
 
     public Integer getNroLinea() {

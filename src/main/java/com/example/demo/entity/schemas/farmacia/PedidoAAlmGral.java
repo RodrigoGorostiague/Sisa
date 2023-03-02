@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -16,9 +16,9 @@ public class PedidoAAlmGral {
     private Boolean anulado;
     private String observaciones;
     private LocalDateTime hora;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "codigour", referencedColumnName = "codigour")
-    private List<UnidadesRecepcion> unidadesRecepcion;
+    private UnidadesRecepcion unidadesRecepcion;
     public Integer getNroPedido() {
         return nroPedido;
     }
@@ -59,11 +59,11 @@ public class PedidoAAlmGral {
         this.hora = hora;
     }
 
-    public List<UnidadesRecepcion> getUnidadesRecepcion() {
+    public UnidadesRecepcion getUnidadesRecepcion() {
         return unidadesRecepcion;
     }
 
-    public void setUnidadesRecepcion(List<UnidadesRecepcion> unidadesRecepcion) {
+    public void setUnidadesRecepcion(UnidadesRecepcion unidadesRecepcion) {
         this.unidadesRecepcion = unidadesRecepcion;
     }
 }

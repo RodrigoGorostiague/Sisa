@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -10,12 +10,12 @@ public class SolucionEsParenterales {
     @Id
     private String codigo;
     private String descripcion;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "codigoclase", referencedColumnName = "codigoclase"),
             @JoinColumn(name = "item", referencedColumnName = "item")
     })
-    private List<Item> item;
+    private Item item;
 
     public String getCodigo() {
         return codigo;
@@ -33,11 +33,11 @@ public class SolucionEsParenterales {
         this.descripcion = descripcion;
     }
 
-    public List<Item> getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 }

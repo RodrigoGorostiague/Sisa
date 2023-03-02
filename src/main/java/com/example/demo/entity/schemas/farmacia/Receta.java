@@ -1,10 +1,9 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
-import com.api.sisa.entity.schemas.paciente.Paciente;
-import com.api.sisa.entity.schemas.personal.Personal;
+import com.example.demo.entity.schemas.paciente.Paciente;
+import com.example.demo.entity.schemas.personal.Personal;
 import jakarta.persistence.*;
 
-import java.text.AttributedString;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -14,14 +13,14 @@ import java.util.List;
 public class Receta {
     @EmbeddedId
     private RecetaPK id;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "idpaciente",referencedColumnName = "idpaciente")
-    private List<Paciente> paciente;
+    private Paciente paciente;
     @Column(name = "fechareceta")
     private Date fechaReceta;
-    @OneToMany
-    @JoinColumn(name = "profesionalsolicitante", referencedColumnName = "codigoprofesional")
-    private List<Personal> profesionalSolicitante;
+    @ManyToOne
+    @JoinColumn(name = "profesionalsolicitante", referencedColumnName = "codigopersonal")
+    private Personal profesionalSolicitante;
     @Column(name = "tipoproc")
     private String tipoProc;
     @Column(name = "uatproc")
@@ -37,9 +36,9 @@ public class Receta {
     private LocalDateTime hora;
     @Column(name = "descuentastock")
     private String descuentaStock;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "codigour", referencedColumnName = "codigour")
-    private List<UnidadesRecepcion> unidadesRecepcion;
+    private UnidadesRecepcion unidadesRecepcion;
 
     public RecetaPK getId() {
         return id;
@@ -49,11 +48,11 @@ public class Receta {
         this.id = id;
     }
 
-    public List<Paciente> getPaciente() {
+    public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(List<Paciente> paciente) {
+    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 
@@ -65,11 +64,11 @@ public class Receta {
         this.fechaReceta = fechaReceta;
     }
 
-    public List<Personal> getProfesionalSolicitante() {
+    public Personal getProfesionalSolicitante() {
         return profesionalSolicitante;
     }
 
-    public void setProfesionalSolicitante(List<Personal> profesionalSolicitante) {
+    public void setProfesionalSolicitante(Personal profesionalSolicitante) {
         this.profesionalSolicitante = profesionalSolicitante;
     }
 
@@ -145,11 +144,11 @@ public class Receta {
         this.descuentaStock = descuentaStock;
     }
 
-    public List<UnidadesRecepcion> getUnidadesRecepcion() {
+    public UnidadesRecepcion getUnidadesRecepcion() {
         return unidadesRecepcion;
     }
 
-    public void setUnidadesRecepcion(List<UnidadesRecepcion> unidadesRecepcion) {
+    public void setUnidadesRecepcion(UnidadesRecepcion unidadesRecepcion) {
         this.unidadesRecepcion = unidadesRecepcion;
     }
 }

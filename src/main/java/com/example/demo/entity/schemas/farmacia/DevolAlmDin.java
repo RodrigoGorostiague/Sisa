@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -20,15 +20,15 @@ public class DevolAlmDin {
     private Boolean anulado;
     private String observaciones;
     private LocalDateTime hora;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "tipodestino", referencedColumnName = "codigo"),
             @JoinColumn(name = "codigour", referencedColumnName = "codigour")
     })
-    private List<TipoDestino> tipoDestino;
-    @OneToMany
-    @JoinColumn(name = "codigour", referencedColumnName = "codigour")
-    private List<UnidadesRecepcion> unidadesRecepcion;
+    private TipoDestino tipoDestino;
+    @ManyToOne
+    @JoinColumn(name = "codigour", referencedColumnName = "codigour", insertable=false, updatable=false)
+    private UnidadesRecepcion unidadesRecepcion;
 
     public Integer getNroDevol() {
         return nroDevol;
@@ -86,19 +86,19 @@ public class DevolAlmDin {
         this.hora = hora;
     }
 
-    public List<TipoDestino> getTipoDestino() {
+    public TipoDestino getTipoDestino() {
         return tipoDestino;
     }
 
-    public void setTipoDestino(List<TipoDestino> tipoDestino) {
+    public void setTipoDestino(TipoDestino tipoDestino) {
         this.tipoDestino = tipoDestino;
     }
 
-    public List<UnidadesRecepcion> getUnidadesRecepcion() {
+    public UnidadesRecepcion getUnidadesRecepcion() {
         return unidadesRecepcion;
     }
 
-    public void setUnidadesRecepcion(List<UnidadesRecepcion> unidadesRecepcion) {
+    public void setUnidadesRecepcion(UnidadesRecepcion unidadesRecepcion) {
         this.unidadesRecepcion = unidadesRecepcion;
     }
 }

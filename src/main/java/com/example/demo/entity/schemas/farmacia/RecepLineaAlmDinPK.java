@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

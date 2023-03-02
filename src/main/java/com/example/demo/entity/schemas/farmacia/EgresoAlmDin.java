@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -13,12 +13,12 @@ public class EgresoAlmDin {
     @Column(name = "nroegreso")
     private Integer nroEgreso;
     private Date fecha;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "tipodestino", referencedColumnName = "codigo"),
             @JoinColumn(name = "codigour", referencedColumnName = "codigour")
     })
-    private List<TipoDestino> tipoDestino;
+    private TipoDestino tipoDestino;
     @Column(name = "uniatdestino")
     private String uniatDestino;
     @Column(name = "saladestino")
@@ -28,9 +28,9 @@ public class EgresoAlmDin {
     private Boolean anulado;
     private String observaciones;
     private LocalDateTime hora;
-    @OneToMany
-    @JoinColumn(name = "codigour", referencedColumnName = "codigour")
-    private List<UnidadesRecepcion> unidadesRecepcion;
+    @ManyToOne
+    @JoinColumn(name = "codigour", referencedColumnName = "codigour", insertable=false, updatable=false)
+    private UnidadesRecepcion unidadesRecepcion;
 
     public Integer getNroEgreso() {
         return nroEgreso;
@@ -48,11 +48,11 @@ public class EgresoAlmDin {
         this.fecha = fecha;
     }
 
-    public List<TipoDestino> getTipoDestino() {
+    public TipoDestino getTipoDestino() {
         return tipoDestino;
     }
 
-    public void setTipoDestino(List<TipoDestino> tipoDestino) {
+    public void setTipoDestino(TipoDestino tipoDestino) {
         this.tipoDestino = tipoDestino;
     }
 
@@ -104,11 +104,11 @@ public class EgresoAlmDin {
         this.hora = hora;
     }
 
-    public List<UnidadesRecepcion> getUnidadesRecepcion() {
+    public UnidadesRecepcion getUnidadesRecepcion() {
         return unidadesRecepcion;
     }
 
-    public void setUnidadesRecepcion(List<UnidadesRecepcion> unidadesRecepcion) {
+    public void setUnidadesRecepcion(UnidadesRecepcion unidadesRecepcion) {
         this.unidadesRecepcion = unidadesRecepcion;
     }
 }

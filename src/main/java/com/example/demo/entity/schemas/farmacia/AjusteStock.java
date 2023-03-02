@@ -1,10 +1,9 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
+import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "ajustestock", schema = "farmacia")
@@ -12,22 +11,22 @@ public class AjusteStock {
     @Id
     @Column(name = "nroajuste")
     private Integer nroAjuste;
-    private Data fecha;
+    private Date fecha;
     private Boolean anulado;
     private String motivo;
     private String observaciones;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "clase", referencedColumnName = "codigoclase"),
             @JoinColumn(name = "item", referencedColumnName = "item")
     })
-    private List<Item> item;
+    private Item item;
     private Integer cantidad;
     private String tipo;
     private LocalDateTime hora;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "codigour", referencedColumnName = "codigour")
-    private List<UnidadesRecepcion> unidadesRecepcion;
+    private UnidadesRecepcion unidadesRecepcion;
 
     public Integer getNroAjuste() {
         return nroAjuste;
@@ -37,11 +36,11 @@ public class AjusteStock {
         this.nroAjuste = nroAjuste;
     }
 
-    public Data getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Data fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -69,11 +68,11 @@ public class AjusteStock {
         this.observaciones = observaciones;
     }
 
-    public List<Item> getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 
@@ -101,11 +100,11 @@ public class AjusteStock {
         this.hora = hora;
     }
 
-    public List<UnidadesRecepcion> getUnidadesRecepcion() {
+    public UnidadesRecepcion getUnidadesRecepcion() {
         return unidadesRecepcion;
     }
 
-    public void setUnidadesRecepcion(List<UnidadesRecepcion> unidadesRecepcion) {
+    public void setUnidadesRecepcion(UnidadesRecepcion unidadesRecepcion) {
         this.unidadesRecepcion = unidadesRecepcion;
     }
 }

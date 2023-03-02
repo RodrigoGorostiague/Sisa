@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -9,12 +9,12 @@ import java.util.List;
 public class EquivItemFracc {
     @EmbeddedId
     private EquivItemFraccPK id;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "clasefrac", referencedColumnName = "codigoclase"),
             @JoinColumn(name = "itemfrac", referencedColumnName = "item")
     })
-    private List<Item> item;
+    private Item item;
     private Integer cantidad;
 
     public EquivItemFraccPK getId() {
@@ -25,11 +25,11 @@ public class EquivItemFracc {
         this.id = id;
     }
 
-    public List<Item> getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 

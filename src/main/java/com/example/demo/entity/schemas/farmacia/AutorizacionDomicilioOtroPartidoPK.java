@@ -1,10 +1,7 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
-import com.api.sisa.entity.schemas.paciente.Paciente;
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import com.example.demo.entity.schemas.paciente.Paciente;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,9 +12,9 @@ public class AutorizacionDomicilioOtroPartidoPK implements Serializable {
     @Column(name = "fechaalta")
     private Date fechaAlta;
     private Date fechaHasta;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "idpaciente", referencedColumnName = "idpaciente")
-    private List<Paciente> paciente;
+    private Paciente paciente;
 
     public Date getFechaAlta() {
         return fechaAlta;
@@ -35,11 +32,11 @@ public class AutorizacionDomicilioOtroPartidoPK implements Serializable {
         this.fechaHasta = fechaHasta;
     }
 
-    public List<Paciente> getPaciente() {
+    public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(List<Paciente> paciente) {
+    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 }

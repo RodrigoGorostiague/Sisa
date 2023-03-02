@@ -1,4 +1,4 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
 import jakarta.persistence.*;
 
@@ -9,12 +9,12 @@ import java.util.List;
 public class LineaPedidoAAlmGral {
     @EmbeddedId
     private LineaPedidoAAlmGralPK id;
-    @OneToMany
+    @ManyToOne
     @JoinColumns({
-            @JoinColumn(name = "codigoClase", referencedColumnName = "codigoClase"),
-            @JoinColumn(name = "codigoClase", referencedColumnName = "codigoClase")
+            @JoinColumn(name = "codigoclase", referencedColumnName = "codigoclase"),
+            @JoinColumn(name = "codigoitem", referencedColumnName = "item")
     })
-    private List<Item> item;
+    private Item item;
     private Integer cantidad;
     private Integer costounitario;
 
@@ -26,11 +26,11 @@ public class LineaPedidoAAlmGral {
         this.id = id;
     }
 
-    public List<Item> getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 

@@ -1,6 +1,6 @@
-package com.api.sisa.entity.schemas.farmacia;
+package com.example.demo.entity.schemas.farmacia;
 
-import com.api.sisa.entity.schemas.organizacion.UnidadAtencion;
+import com.example.demo.entity.schemas.organizacion.UnidadAtencion;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -10,15 +10,15 @@ import java.util.List;
 public class ItemSalaPK implements Serializable {
     @Column(name = "codigosala")
     private String codigoSala;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "codigouniat", referencedColumnName = "codigouniat")
-    private List<UnidadAtencion> unidadAtencion;
-    @OneToMany
+    private UnidadAtencion unidadAtencion;
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "clase", referencedColumnName = "codigoclase"),
             @JoinColumn(name = "item", referencedColumnName = "item")
     })
-    private List<Item> item;
+    private Item item;
 
     public String getCodigoSala() {
         return codigoSala;
@@ -28,19 +28,19 @@ public class ItemSalaPK implements Serializable {
         this.codigoSala = codigoSala;
     }
 
-    public List<UnidadAtencion> getUnidadAtencion() {
+    public UnidadAtencion getUnidadAtencion() {
         return unidadAtencion;
     }
 
-    public void setUnidadAtencion(List<UnidadAtencion> unidadAtencion) {
+    public void setUnidadAtencion(UnidadAtencion unidadAtencion) {
         this.unidadAtencion = unidadAtencion;
     }
 
-    public List<Item> getItem() {
+    public Item getItem() {
         return item;
     }
 
-    public void setItem(List<Item> item) {
+    public void setItem(Item item) {
         this.item = item;
     }
 }
