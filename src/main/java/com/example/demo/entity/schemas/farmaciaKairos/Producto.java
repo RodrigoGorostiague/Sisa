@@ -10,18 +10,18 @@ public class Producto {
     @Id
     private Integer codigo;
     private String descripcion;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "laboratorio", referencedColumnName = "codigolab")
     private Laboratorio laboratorio;
     private String estado;
-    @OneToOne(mappedBy = "productos")
-    private Presentacion presentacion;
+    @OneToMany(mappedBy = "id.producto")
+    private List<Presentacion> presentacion;
 
-    public Presentacion getPresentacion() {
+    public List<Presentacion> getPresentacion() {
         return presentacion;
     }
 
-    public void setPresentacion(Presentacion presentacion) {
+    public void setPresentacion(List<Presentacion> presentacion) {
         this.presentacion = presentacion;
     }
 

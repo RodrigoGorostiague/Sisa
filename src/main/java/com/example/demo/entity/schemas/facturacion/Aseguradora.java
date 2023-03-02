@@ -22,7 +22,7 @@ public class Aseguradora {
     @Column(name = "cpostal_corr")
     private String cpostalCorr;
     private String mail;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "iva", referencedColumnName = "idtipoiva")
     private TipoIva iva;
     @Column(name = "paginaweb")

@@ -12,9 +12,9 @@ import java.util.List;
 public class OtrProfPlanillaEmer {
     @EmbeddedId
     private OtrProfPlanillaEmerPK id;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "codigodiagnostico", referencedColumnName = "codigo")
-    private List<NomencladorEnfermedadesCie10> nomencladorEnfermedadesCie10;
+    private NomencladorEnfermedadesCie10 nomencladorEnfermedadesCie10;
     private String policia;
     private String defuncion;
     private String consulta;
@@ -79,11 +79,11 @@ public class OtrProfPlanillaEmer {
         this.id = id;
     }
 
-    public List<NomencladorEnfermedadesCie10> getNomencladorEnfermedadesCie10() {
+    public NomencladorEnfermedadesCie10 getNomencladorEnfermedadesCie10() {
         return nomencladorEnfermedadesCie10;
     }
 
-    public void setNomencladorEnfermedadesCie10(List<NomencladorEnfermedadesCie10> nomencladorEnfermedadesCie10) {
+    public void setNomencladorEnfermedadesCie10(NomencladorEnfermedadesCie10 nomencladorEnfermedadesCie10) {
         this.nomencladorEnfermedadesCie10 = nomencladorEnfermedadesCie10;
     }
 

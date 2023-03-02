@@ -13,7 +13,7 @@ public class Grupo {
     private String descripcuion;
     @OneToMany(mappedBy = "id.idGrupo")
     private List<GrupoMenu> grupoMenus;
-    @OneToMany(mappedBy = "id.grupo")
+    @OneToMany(mappedBy = "grupo")
     private List<PermisoUsuario> permisosUsuario;
 
     public List<PermisoUsuario> getPermisosUsuario() {

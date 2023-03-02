@@ -1,5 +1,4 @@
 package com.example.demo.entity.schemas.emergencia;
-// TODO: 2/3/23 preguntar por las relaciones
 import com.example.demo.entity.schemas.organizacion.UnidadAtencion;
 import com.example.demo.entity.schemas.personal.Personal;
 import jakarta.persistence.*;

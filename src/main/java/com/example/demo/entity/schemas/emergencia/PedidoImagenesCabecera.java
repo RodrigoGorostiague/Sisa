@@ -10,7 +10,7 @@ import java.util.List;
 @Entity
 @Table(schema = "emergencia", name = "pedidoimagenescabecera")
 public class PedidoImagenesCabecera {
-     @EmbeddedId
+    @EmbeddedId
     private PedidoImagenesCabeceraPK id;
     @OneToMany(mappedBy = "id.pedidoImagenesCabecera")
     private List<PedidoImagenesLinea> pedidoImagenesLineas;

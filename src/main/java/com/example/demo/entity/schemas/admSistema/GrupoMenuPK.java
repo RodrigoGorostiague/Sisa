@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 @Embeddable
 public class GrupoMenuPK implements Serializable {
-
     @ManyToOne
     @JoinColumn(name = "idgrupo", referencedColumnName = "idgrupo")
     private Grupo idGrupo;

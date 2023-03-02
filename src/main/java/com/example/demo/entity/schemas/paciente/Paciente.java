@@ -47,8 +47,7 @@ public class Paciente {
     @ManyToOne
     @JoinColumn(name = "idpacientemadretutor", referencedColumnName = "idpaciente")
     private Paciente pacienteMadreTutor;
-    @OneToOne
-    @JoinColumn(name = "historiaclinica", referencedColumnName = "historiaclinica")
+    @OneToOne(mappedBy = "paciente")
     private HistoriaClinica historiaClinica;
     private Date empadronamiento;
     @Column(name = "paclab")

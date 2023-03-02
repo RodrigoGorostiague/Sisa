@@ -17,7 +17,7 @@ public class Modulo {
     private Integer orden;
     @OneToMany(mappedBy = "id.modulo")
     private List<Parametros> parametros;
-    @OneToMany(mappedBy = "id.modulo")
+    @OneToMany(mappedBy = "modulo")
     private List<Menu> menus;
     @OneToMany(mappedBy = "id.idModulo")
     private List<CierraSistema> cierraSistemas;

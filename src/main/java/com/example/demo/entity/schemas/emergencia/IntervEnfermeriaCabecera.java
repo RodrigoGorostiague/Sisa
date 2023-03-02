@@ -10,8 +10,6 @@ import java.util.List;
 public class IntervEnfermeriaCabecera {
     @EmbeddedId
     private IntervEnfermeriaCabeceraPK id;
-    @Column(name = "idpaciente")
-    private Integer idPaciente;
     @ManyToOne
     @JoinColumn(name = "idpaciente", referencedColumnName = "idpaciente")
     private Paciente paciente;
@@ -35,6 +33,16 @@ public class IntervEnfermeriaCabecera {
     @Column(name = "triage_dudoso")
     private Boolean triageDudoso;
     private String shockroom;
+    @OneToMany(mappedBy = "id.intervEnfermeriaCabecera")
+    private List<IntervEnfermeriaLineas> intervEnfermeriaLineas;
+
+    public List<IntervEnfermeriaLineas> getIntervEnfermeriaLineas() {
+        return intervEnfermeriaLineas;
+    }
+
+    public void setIntervEnfermeriaLineas(List<IntervEnfermeriaLineas> intervEnfermeriaLineas) {
+        this.intervEnfermeriaLineas = intervEnfermeriaLineas;
+    }
 
     public IntervEnfermeriaCabeceraPK getId() {
         return id;
@@ -42,14 +50,6 @@ public class IntervEnfermeriaCabecera {
 
     public void setId(IntervEnfermeriaCabeceraPK id) {
         this.id = id;
-    }
-
-    public Integer getIdPaciente() {
-        return idPaciente;
-    }
-
-    public void setIdPaciente(Integer idPaciente) {
-        this.idPaciente = idPaciente;
     }
 
     public Paciente getPaciente() {

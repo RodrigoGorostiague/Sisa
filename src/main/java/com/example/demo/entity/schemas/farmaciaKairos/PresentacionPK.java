@@ -1,15 +1,12 @@
 package com.example.demo.entity.schemas.farmaciaKairos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
 @Embeddable
 public class PresentacionPK implements Serializable {
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "codigoproducto",referencedColumnName = "codigo")
     private Producto producto;
     @Column(name = "codigopresentacion")

@@ -1,9 +1,7 @@
 package com.example.demo.entity.schemas.asistencia;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.demo.entity.schemas.emergencia.PadronEspInterconsulta;
+import jakarta.persistence.*;
 
 @Entity
 @Table(schema = "asistencia", name = "padronespecialidad")
@@ -29,6 +27,16 @@ public class PadronEspecialidad {
     private String habilitado;
     @Column(name = "evolucionainternacion")
     private Boolean evolucionaInternacion;
+    @OneToOne(mappedBy = "id")
+    private PadronEspInterconsulta padronEspInterconsultaGuardia;
+
+    public PadronEspInterconsulta getPadronEspInterconsultaGuardia() {
+        return padronEspInterconsultaGuardia;
+    }
+
+    public void setPadronEspInterconsultaGuardia(PadronEspInterconsulta padronEspInterconsultaGuardia) {
+        this.padronEspInterconsultaGuardia = padronEspInterconsultaGuardia;
+    }
 
     public Integer getCodigoEspecialidad() {
         return codigoEspecialidad;

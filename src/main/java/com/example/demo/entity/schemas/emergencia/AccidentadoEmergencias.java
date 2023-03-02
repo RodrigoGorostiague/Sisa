@@ -19,9 +19,9 @@ public class AccidentadoEmergencias {
     @JoinColumn(name = "efecto", referencedColumnName = "codigo")
     private AccidentadoEfecto accidentadoEfecto;
     private String observaciones;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "lesiones", referencedColumnName = "codigo")
-    private List<AccidentadoLesiones> accidentadoLesiones;
+    private AccidentadoLesiones accidentadoLesiones;
     @ManyToOne
     @JoinColumn(name = "usaba", referencedColumnName = "codigo")
     private AccidentadoUsaba accidentadoUsaba;
@@ -68,11 +68,11 @@ public class AccidentadoEmergencias {
         this.observaciones = observaciones;
     }
 
-    public List<AccidentadoLesiones> getAccidentadoLesiones() {
+    public AccidentadoLesiones getAccidentadoLesiones() {
         return accidentadoLesiones;
     }
 
-    public void setAccidentadoLesiones(List<AccidentadoLesiones> accidentadoLesiones) {
+    public void setAccidentadoLesiones(AccidentadoLesiones accidentadoLesiones) {
         this.accidentadoLesiones = accidentadoLesiones;
     }
 

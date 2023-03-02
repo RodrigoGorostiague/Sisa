@@ -19,7 +19,7 @@ public class Menu {
     private Modulo modulo;
     @OneToMany(mappedBy = "id.idmenu")
     private List<ArbolMenu> arbolMenus;
-    @OneToMany(mappedBy = "id.idmenu")
+    @OneToMany(mappedBy = "id.idMenu")
     private List<GrupoMenu> grupoMenus;
 
     public List<GrupoMenu> getGrupoMenus() {

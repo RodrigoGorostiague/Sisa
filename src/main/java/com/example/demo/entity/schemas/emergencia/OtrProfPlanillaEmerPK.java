@@ -14,9 +14,9 @@ public class OtrProfPlanillaEmerPK implements Serializable {
             @JoinColumn(name = "nrocon", referencedColumnName = "nrocon")
     })
     private PlanillaGuardiaEmergencias planillaGuardiaEmergencias;
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "medico", referencedColumnName = "codigopersonal")
-    private List<Personal> medico;
+    private Personal medico;
 
     public PlanillaGuardiaEmergencias getPlanillaGuardiaEmergencias() {
         return planillaGuardiaEmergencias;
@@ -26,11 +26,11 @@ public class OtrProfPlanillaEmerPK implements Serializable {
         this.planillaGuardiaEmergencias = planillaGuardiaEmergencias;
     }
 
-    public List<Personal> getMedico() {
+    public Personal getMedico() {
         return medico;
     }
 
-    public void setMedico(List<Personal> medico) {
+    public void setMedico(Personal medico) {
         this.medico = medico;
     }
 }

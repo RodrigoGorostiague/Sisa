@@ -1,9 +1,8 @@
 package com.example.demo.entity.schemas.farmaciaKairos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "laboratorio", schema = "farmacia_kairos")
@@ -13,6 +12,16 @@ public class Laboratorio {
     private Integer codigoLab;
     private String nombre;
     private String estado;
+    @OneToMany(mappedBy = "laboratorio")
+    private List<Producto> productos;
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
 
     public Integer getCodigoLab() {
         return codigoLab;

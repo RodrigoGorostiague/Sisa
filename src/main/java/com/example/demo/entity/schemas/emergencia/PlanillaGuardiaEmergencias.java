@@ -22,9 +22,9 @@ public class PlanillaGuardiaEmergencias {
     private LocalDateTime hora;
     @Column(name = "estadoform")
     private String estadoForm;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "obrasocial",referencedColumnName = "codigoobrasocial")
-    private List<ObraSocial> obraSocial;
+    private ObraSocial obraSocial;
     @ManyToOne
     @JoinColumn(name = "medico", referencedColumnName = "codigopersonal")
     private Personal medico;
@@ -132,18 +132,6 @@ public class PlanillaGuardiaEmergencias {
     @OneToMany(mappedBy = "id.planillaGuardiaEmergencias")
     private List<InternacionTransitoria> internacionTransitorias;
 
-    public Aseguradora getAseguradora() {
-        return aseguradora;
-    }
-
-    public List<InternacionTransitoria> getInternacionTransitorias() {
-        return internacionTransitorias;
-    }
-
-    public void setInternacionTransitorias(List<InternacionTransitoria> internacionTransitorias) {
-        this.internacionTransitorias = internacionTransitorias;
-    }
-
     public PlanillaGuardiaEmergenciasPK getId() {
         return id;
     }
@@ -184,11 +172,11 @@ public class PlanillaGuardiaEmergencias {
         this.estadoForm = estadoForm;
     }
 
-    public List<ObraSocial> getObraSocial() {
+    public ObraSocial getObraSocial() {
         return obraSocial;
     }
 
-    public void setObraSocial(List<ObraSocial> obraSocial) {
+    public void setObraSocial(ObraSocial obraSocial) {
         this.obraSocial = obraSocial;
     }
 
@@ -198,10 +186,6 @@ public class PlanillaGuardiaEmergencias {
 
     public void setMedico(Personal medico) {
         this.medico = medico;
-    }
-
-    public void setAseguradora(Aseguradora aseguradora) {
-        this.aseguradora = aseguradora;
     }
 
     public String getEsAccidente() {
@@ -250,6 +234,14 @@ public class PlanillaGuardiaEmergencias {
 
     public void setNumeroPoliza(Integer numeroPoliza) {
         this.numeroPoliza = numeroPoliza;
+    }
+
+    public Aseguradora getAseguradora() {
+        return aseguradora;
+    }
+
+    public void setAseguradora(Aseguradora aseguradora) {
+        this.aseguradora = aseguradora;
     }
 
     public String getTipoAtencion() {
@@ -642,5 +634,13 @@ public class PlanillaGuardiaEmergencias {
 
     public void setRespiratorio(String respiratorio) {
         this.respiratorio = respiratorio;
+    }
+
+    public List<InternacionTransitoria> getInternacionTransitorias() {
+        return internacionTransitorias;
+    }
+
+    public void setInternacionTransitorias(List<InternacionTransitoria> internacionTransitorias) {
+        this.internacionTransitorias = internacionTransitorias;
     }
 }

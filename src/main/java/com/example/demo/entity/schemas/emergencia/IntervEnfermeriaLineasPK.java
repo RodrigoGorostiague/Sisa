@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Embeddable
 public class IntervEnfermeriaLineasPK implements Serializable {
-    @OneToOne
+    @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "nrocon", referencedColumnName = "nrocon"),
             @JoinColumn(name = "uniat", referencedColumnName = "uniat"),

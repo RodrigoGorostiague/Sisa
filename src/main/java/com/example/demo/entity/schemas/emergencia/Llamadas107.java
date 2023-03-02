@@ -35,16 +35,15 @@ public class Llamadas107 {
     private String nombreApellidoSolicitante;
     @Column(name = "codigousuario")
     private String codigoUsuario;
-    // TODO: 1/3/23 lucho consulta
     @ManyToOne
     @JoinColumn(name = "enfermero", referencedColumnName = "codigopersonal")
     private Personal enfermero;
     @ManyToOne
     @JoinColumn(name = "chofer", referencedColumnName = "codigopersonal")
     private Personal chofer;
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "idpaciente", referencedColumnName = "idpaciente")
-    private List<Paciente> paciente;
+    private Paciente paciente;
     @Column(name = "triage_operador")
     private String triageOperador;
     private String triageMedico;
@@ -218,11 +217,11 @@ public class Llamadas107 {
         this.chofer = chofer;
     }
 
-    public List<Paciente> getPaciente() {
+    public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(List<Paciente> paciente) {
+    public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
 

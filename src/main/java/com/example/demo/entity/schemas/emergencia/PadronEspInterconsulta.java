@@ -9,15 +9,15 @@ import java.util.List;
 @Table(name = "padronespinterconsulta", schema = "emergencia")
 public class PadronEspInterconsulta {
     @Id
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "especialidad", referencedColumnName = "codigoespecialidad")
-    private List<PadronEspecialidad> id;
+    private PadronEspecialidad id;
 
-    public List<PadronEspecialidad> getId() {
+    public PadronEspecialidad getId() {
         return id;
     }
 
-    public void setId(List<PadronEspecialidad> id) {
+    public void setId(PadronEspecialidad id) {
         this.id = id;
     }
 }
