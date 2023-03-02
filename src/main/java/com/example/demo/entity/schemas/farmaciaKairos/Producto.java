@@ -16,6 +16,16 @@ public class Producto {
     private String estado;
     @OneToMany(mappedBy = "id.producto")
     private List<Presentacion> presentacion;
+    @ManyToMany(mappedBy = "productos")
+    private List<Droga> drogas;
+
+    public List<Droga> getDrogas() {
+        return drogas;
+    }
+
+    public void setDrogas(List<Droga> drogas) {
+        this.drogas = drogas;
+    }
 
     public List<Presentacion> getPresentacion() {
         return presentacion;
