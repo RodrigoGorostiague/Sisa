@@ -6,14 +6,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "analisis", schema = "laboratorio")
+@Table(name = "analisis", schema = "laboratorio_2009")
 public class Analisis {
     @EmbeddedId
     private AnalisisPK id;
-    private Integer protocolo;
-    @Column(name = "codigoanalisis")
-    private Integer codigoAnalisis;
+    @Column(name = "codigonroanalisis")
+    private Integer codigoNroAnalisis;
+    @Column(name = "codigotextoanalisis")
+    private String codigoTextoAnalisis;
+    @Column(name = "nombreanalisis")
+    private String nombreAnalisis;
     private String estado;
+    @Column(name = "unidadlab")
+    private Integer unidadLab;
 
     public AnalisisPK getId() {
         return id;
@@ -23,20 +28,28 @@ public class Analisis {
         this.id = id;
     }
 
-    public Integer getProtocolo() {
-        return protocolo;
+    public Integer getCodigoNroAnalisis() {
+        return codigoNroAnalisis;
     }
 
-    public void setProtocolo(Integer protocolo) {
-        this.protocolo = protocolo;
+    public void setCodigoNroAnalisis(Integer codigoNroAnalisis) {
+        this.codigoNroAnalisis = codigoNroAnalisis;
     }
 
-    public Integer getCodigoAnalisis() {
-        return codigoAnalisis;
+    public String getCodigoTextoAnalisis() {
+        return codigoTextoAnalisis;
     }
 
-    public void setCodigoAnalisis(Integer codigoAnalisis) {
-        this.codigoAnalisis = codigoAnalisis;
+    public void setCodigoTextoAnalisis(String codigoTextoAnalisis) {
+        this.codigoTextoAnalisis = codigoTextoAnalisis;
+    }
+
+    public String getNombreAnalisis() {
+        return nombreAnalisis;
+    }
+
+    public void setNombreAnalisis(String nombreAnalisis) {
+        this.nombreAnalisis = nombreAnalisis;
     }
 
     public String getEstado() {
@@ -45,5 +58,13 @@ public class Analisis {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Integer getUnidadLab() {
+        return unidadLab;
+    }
+
+    public void setUnidadLab(Integer unidadLab) {
+        this.unidadLab = unidadLab;
     }
 }

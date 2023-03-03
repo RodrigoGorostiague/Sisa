@@ -1,73 +1,62 @@
 package com.example.demo.entity.schemas.laboratorio;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.demo.entity.schemas.organizacion.Area;
+import com.example.demo.entity.schemas.paciente.Paciente;
+import com.example.demo.entity.schemas.personal.Personal;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "orden", schema = "laboratorio")
+@Table(name = "orden", schema = "laboratorio_2009")
 public class Orden {
     @Id
-    @Column(name = "numeroorden")
-    private Integer numeroOrden;
-    @Column(name = "obrasocial")
-    private Integer obraSocial;
-    private String profesional;
-    @Column(name = "codigoarea")
-    private Integer codigoArea;
-    @Column(name = "idpaciente")
-    private Integer idPaciente;
+    @Column(name = "nroprotocolo")
+    private Integer nroProtocolo;
+    @Column(name = "tipopac")
+    private String tipoPac;
+    @Column(name = "nropac")
+    private Integer nroPac;
     @Column(name = "fechaingreso")
     private Date fechaIngreso;
-    private Integer embarazada;
-    @Column(name = "numeropaciente")
-    private Integer numeroPaciente;
-    @Column(name = "tipopaciente")
-    private String tipoPaciente;
-    @Column(name = "areaprocedencia")
-    private Integer areaProcedencia;
+    @ManyToOne
+    @JoinColumn(name = "codigoprofesional", referencedColumnName = "codigopersonal")
+    private Personal personal;
+    @ManyToOne
+    @JoinColumn(name = "codigoprocedencia", referencedColumnName = "codigoarea")
+    private Area area;
+    @Column(name = "codigoobrasocial")
+    private Integer codigoObraSocial;
+    @Column(name = "mesesembarazo")
+    private Integer mesesEmbarazo;
+    @Column(name = "fechaultactualizacion")
+    private Date fechaUltActualizacion;
+    @ManyToOne
+    @JoinColumn(name = "idpaciente", referencedColumnName = "idpaciente")
+    private Paciente paciente;
 
-    public Integer getNumeroOrden() {
-        return numeroOrden;
+    public Integer getNroProtocolo() {
+        return nroProtocolo;
     }
 
-    public void setNumeroOrden(Integer numeroOrden) {
-        this.numeroOrden = numeroOrden;
+    public void setNroProtocolo(Integer nroProtocolo) {
+        this.nroProtocolo = nroProtocolo;
     }
 
-    public Integer getObraSocial() {
-        return obraSocial;
+    public String getTipoPac() {
+        return tipoPac;
     }
 
-    public void setObraSocial(Integer obraSocial) {
-        this.obraSocial = obraSocial;
+    public void setTipoPac(String tipoPac) {
+        this.tipoPac = tipoPac;
     }
 
-    public String getProfesional() {
-        return profesional;
+    public Integer getNroPac() {
+        return nroPac;
     }
 
-    public void setProfesional(String profesional) {
-        this.profesional = profesional;
-    }
-
-    public Integer getCodigoArea() {
-        return codigoArea;
-    }
-
-    public void setCodigoArea(Integer codigoArea) {
-        this.codigoArea = codigoArea;
-    }
-
-    public Integer getIdPaciente() {
-        return idPaciente;
-    }
-
-    public void setIdPaciente(Integer idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setNroPac(Integer nroPac) {
+        this.nroPac = nroPac;
     }
 
     public Date getFechaIngreso() {
@@ -78,35 +67,51 @@ public class Orden {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Integer getEmbarazada() {
-        return embarazada;
+    public Personal getPersonal() {
+        return personal;
     }
 
-    public void setEmbarazada(Integer embarazada) {
-        this.embarazada = embarazada;
+    public void setPersonal(Personal personal) {
+        this.personal = personal;
     }
 
-    public Integer getNumeroPaciente() {
-        return numeroPaciente;
+    public Area getArea() {
+        return area;
     }
 
-    public void setNumeroPaciente(Integer numeroPaciente) {
-        this.numeroPaciente = numeroPaciente;
+    public void setArea(Area area) {
+        this.area = area;
     }
 
-    public String getTipoPaciente() {
-        return tipoPaciente;
+    public Integer getCodigoObraSocial() {
+        return codigoObraSocial;
     }
 
-    public void setTipoPaciente(String tipoPaciente) {
-        this.tipoPaciente = tipoPaciente;
+    public void setCodigoObraSocial(Integer codigoObraSocial) {
+        this.codigoObraSocial = codigoObraSocial;
     }
 
-    public Integer getAreaProcedencia() {
-        return areaProcedencia;
+    public Integer getMesesEmbarazo() {
+        return mesesEmbarazo;
     }
 
-    public void setAreaProcedencia(Integer areaProcedencia) {
-        this.areaProcedencia = areaProcedencia;
+    public void setMesesEmbarazo(Integer mesesEmbarazo) {
+        this.mesesEmbarazo = mesesEmbarazo;
+    }
+
+    public Date getFechaUltActualizacion() {
+        return fechaUltActualizacion;
+    }
+
+    public void setFechaUltActualizacion(Date fechaUltActualizacion) {
+        this.fechaUltActualizacion = fechaUltActualizacion;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 }

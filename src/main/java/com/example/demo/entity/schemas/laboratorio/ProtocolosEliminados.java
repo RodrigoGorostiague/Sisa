@@ -5,16 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "fechaactualizacion", schema = "laboratorio")
-public class FechaActualizacion {
+@Table(name = "protocolos_eliminados", schema = "laboratorio_2009")
+public class ProtocolosEliminados {
     @EmbeddedId
-    private FechaActualizacionPK id;
+    private ProtocolosEliminadosPK id;
 
-    public FechaActualizacionPK getId() {
+    public ProtocolosEliminadosPK getId() {
         return id;
     }
 
-    public void setId(FechaActualizacionPK id) {
+    public void setId(ProtocolosEliminadosPK id) {
         this.id = id;
     }
 }

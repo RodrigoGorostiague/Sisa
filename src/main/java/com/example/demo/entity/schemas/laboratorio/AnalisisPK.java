@@ -2,28 +2,32 @@ package com.example.demo.entity.schemas.laboratorio;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 import java.io.Serializable;
 
 @Embeddable
 public class AnalisisPK implements Serializable {
-    @Column(name = "numeroorden")
-    private Integer numeroOrden;
-    private Integer analisis;
+    @OneToOne
+    @JoinColumn(name = "nroprotocolo", referencedColumnName = "nroprotocolo")
+    private Orden orden;
+    @Column(name = "nroanalisis")
+    private Integer nroAnalisis;
 
-    public Integer getNumeroOrden() {
-        return numeroOrden;
+    public Orden getOrden() {
+        return orden;
     }
 
-    public void setNumeroOrden(Integer numeroOrden) {
-        this.numeroOrden = numeroOrden;
+    public void setOrden(Orden orden) {
+        this.orden = orden;
     }
 
-    public Integer getAnalisis() {
-        return analisis;
+    public Integer getNroAnalisis() {
+        return nroAnalisis;
     }
 
-    public void setAnalisis(Integer analisis) {
-        this.analisis = analisis;
+    public void setNroAnalisis(Integer nroAnalisis) {
+        this.nroAnalisis = nroAnalisis;
     }
 }
