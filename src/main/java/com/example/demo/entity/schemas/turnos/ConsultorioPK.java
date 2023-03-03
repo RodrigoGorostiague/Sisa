@@ -1,4 +1,4 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.turnos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -8,34 +8,17 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class ConsultorioPK implements Serializable {
-    private LocalDateTime fecha;
-    private String usuario;
+public class ConsultorioPK implements Serializable{
     @Column(name = "codigouniat")
     private String codigoUniat;
     @Column(name = "codigoespecialidad")
     private Integer codigoEspecialidad;
-     @Column(name = "numerodia")
-    private Integer numeroDia;
-     private LocalDateTime hora;
-     @Column(name = "fechainicio")
-     private Date fechaInicio;
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+    @Column(name = "codigopersonal")
+    private String codigoPersonal;
+    private Integer numerodia;
+    private LocalDateTime hora;
+    @Column(name = "fechainicio")
+    private Date fechaInicio;
 
     public String getCodigoUniat() {
         return codigoUniat;
@@ -53,12 +36,20 @@ public class ConsultorioPK implements Serializable {
         this.codigoEspecialidad = codigoEspecialidad;
     }
 
-    public Integer getNumeroDia() {
-        return numeroDia;
+    public String getCodigoPersonal() {
+        return codigoPersonal;
     }
 
-    public void setNumeroDia(Integer numeroDia) {
-        this.numeroDia = numeroDia;
+    public void setCodigoPersonal(String codigoPersonal) {
+        this.codigoPersonal = codigoPersonal;
+    }
+
+    public Integer getNumerodia() {
+        return numerodia;
+    }
+
+    public void setNumerodia(Integer numerodia) {
+        this.numerodia = numerodia;
     }
 
     public LocalDateTime getHora() {

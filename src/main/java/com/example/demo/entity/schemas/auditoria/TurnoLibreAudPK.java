@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class TurnoLibrePK implements Serializable {
+public class TurnoLibreAudPK implements Serializable {
     private Date fechaGeneracion;
     private String usuario;
     @Column(name = "horageneracion")

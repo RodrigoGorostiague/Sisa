@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "anatomiapatologica", name = "diagnostico")
-public class Diagnostico {
+public class DiagnosticoAnatoPat {
     @Id
     private String codigo;
     private String descripcion;
