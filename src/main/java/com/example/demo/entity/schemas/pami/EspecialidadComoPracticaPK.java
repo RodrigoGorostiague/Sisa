@@ -2,14 +2,15 @@ package com.example.demo.entity.schemas.pami;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
+import java.io.Serializable;
+
 @Embeddable
-public class EquivalenciaPracticaPK {
+public class EspecialidadComoPracticaPK implements Serializable {
     @Column(name = "id_practica_pami")
     private String idPracticaPami;
-    @Column(name = "id_practica_sisa")
-    private String idPracticaSisa;
+    @Column(name = "codigoespecialidad")
+    private Integer codigoEspecialidad;
 
     public String getIdPracticaPami() {
         return idPracticaPami;
@@ -19,11 +20,11 @@ public class EquivalenciaPracticaPK {
         this.idPracticaPami = idPracticaPami;
     }
 
-    public String getIdPracticaSisa() {
-        return idPracticaSisa;
+    public Integer getCodigoEspecialidad() {
+        return codigoEspecialidad;
     }
 
-    public void setIdPracticaSisa(String idPracticaSisa) {
-        this.idPracticaSisa = idPracticaSisa;
+    public void setCodigoEspecialidad(Integer codigoEspecialidad) {
+        this.codigoEspecialidad = codigoEspecialidad;
     }
 }

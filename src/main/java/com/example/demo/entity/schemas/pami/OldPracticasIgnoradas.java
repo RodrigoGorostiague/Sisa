@@ -5,17 +5,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "practicas_ignoradas", schema = "pami_nuevo")
-public class PracticasIgnoradas {
+@Table(name = "old_practicas_ignoradas", schema = "pami_nuevo")
+public class OldPracticasIgnoradas {
     @EmbeddedId
-    private PracticasIgnoradasPK id;
+    private OldPracticasIgnoradasPK id;
     private String sector;
 
-    public PracticasIgnoradasPK getId() {
+    public OldPracticasIgnoradasPK getId() {
         return id;
     }
 
-    public void setId(PracticasIgnoradasPK id) {
+    public void setId(OldPracticasIgnoradasPK id) {
         this.id = id;
     }
 

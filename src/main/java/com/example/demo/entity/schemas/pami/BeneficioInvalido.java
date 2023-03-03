@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "beneficio_invalido", schema = "pami")
+@Table(name = "beneficio_invalido", schema = "pami_nuevo")
 public class BeneficioInvalido {
     @Id
     @Column(name = "idpaciente")

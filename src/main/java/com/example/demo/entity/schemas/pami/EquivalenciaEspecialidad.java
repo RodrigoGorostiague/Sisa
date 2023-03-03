@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "equivalencia_especialidad",schema = "pami")
+@Table(name = "equivalencia_especialidad", schema = "pami_nuevo")
 public class EquivalenciaEspecialidad {
     @EmbeddedId
     private EquivalenciaEspecialidadPK id;

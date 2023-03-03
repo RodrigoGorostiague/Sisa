@@ -8,18 +8,20 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "equivalencia_practica", schema = "pami")
+@Table(name = "equivalencia_practica", schema = "pami_nuevo")
 public class EquivalenciaPractica {
     @EmbeddedId
     private EquivalenciaPracticaPK id;
     @Column(name = "descripcion_practica")
-    private String descripcionPractica;
+    private String descripcion_practica;
     private Integer modulo;
-    @Column(name = "descripcio_modulo")
-    private String descripcioModulo;
+    @Column(name = "descripcion_modulo")
+    private  String descripcionModulo;
     private Date vigencia;
     @Column(name = "finvigencia")
     private Date finVigencia;
+    @Column(name = "nivel_autorizacion")
+    private String nivelAutorizacion;
 
     public EquivalenciaPracticaPK getId() {
         return id;
@@ -29,12 +31,12 @@ public class EquivalenciaPractica {
         this.id = id;
     }
 
-    public String getDescripcionPractica() {
-        return descripcionPractica;
+    public String getDescripcion_practica() {
+        return descripcion_practica;
     }
 
-    public void setDescripcionPractica(String descripcionPractica) {
-        this.descripcionPractica = descripcionPractica;
+    public void setDescripcion_practica(String descripcion_practica) {
+        this.descripcion_practica = descripcion_practica;
     }
 
     public Integer getModulo() {
@@ -45,12 +47,12 @@ public class EquivalenciaPractica {
         this.modulo = modulo;
     }
 
-    public String getDescripcioModulo() {
-        return descripcioModulo;
+    public String getDescripcionModulo() {
+        return descripcionModulo;
     }
 
-    public void setDescripcioModulo(String descripcioModulo) {
-        this.descripcioModulo = descripcioModulo;
+    public void setDescripcionModulo(String descripcionModulo) {
+        this.descripcionModulo = descripcionModulo;
     }
 
     public Date getVigencia() {
@@ -67,5 +69,13 @@ public class EquivalenciaPractica {
 
     public void setFinVigencia(Date finVigencia) {
         this.finVigencia = finVigencia;
+    }
+
+    public String getNivelAutorizacion() {
+        return nivelAutorizacion;
+    }
+
+    public void setNivelAutorizacion(String nivelAutorizacion) {
+        this.nivelAutorizacion = nivelAutorizacion;
     }
 }

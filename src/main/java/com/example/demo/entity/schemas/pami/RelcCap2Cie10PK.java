@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public class RelCiap2Cie10PK implements Serializable {
+public class RelcCap2Cie10PK implements Serializable {
     @Column(name = "codigociap")
     private String codigoCiap;
     @Column(name = "codigocie10")

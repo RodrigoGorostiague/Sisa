@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public class ExcepcionesEquivalenciaPracticaPK implements Serializable {
+public class OldEquivalenciaPracticaPK implements Serializable {
     @Column(name = "id_practica_pami")
     private String idPracticaPami;
     @Column(name = "id_practica_sisa")

@@ -8,24 +8,26 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name = "excepciones_equivalencia_practica", schema = "pami")
-public class ExcepcionesEquivalenciaPractica {
+@Table(name = "old_equivalencia_practica", schema = "pami_nuevo")
+public class OldEquivalenciaPractica {
     @EmbeddedId
-    private ExcepcionesEquivalenciaPracticaPK id;
+    private OldEquivalenciaPracticaPK id;
     @Column(name = "descripcion_practica")
     private String descripcionPractica;
     private Integer modulo;
-    @Column(name = "descripcio_modulo")
-    private String descripcioModulo;
+    @Column(name = "descripcion_modulo")
+    private String descripcionModulo;
     private Date vigencia;
     @Column(name = "finvigencia")
     private Date finVigencia;
+    @Column(name = "nivel_autorizacion")
+    private String nivelAutorizacion;
 
-    public ExcepcionesEquivalenciaPracticaPK getId() {
+    public OldEquivalenciaPracticaPK getId() {
         return id;
     }
 
-    public void setId(ExcepcionesEquivalenciaPracticaPK id) {
+    public void setId(OldEquivalenciaPracticaPK id) {
         this.id = id;
     }
 
@@ -45,12 +47,12 @@ public class ExcepcionesEquivalenciaPractica {
         this.modulo = modulo;
     }
 
-    public String getDescripcioModulo() {
-        return descripcioModulo;
+    public String getDescripcionModulo() {
+        return descripcionModulo;
     }
 
-    public void setDescripcioModulo(String descripcioModulo) {
-        this.descripcioModulo = descripcioModulo;
+    public void setDescripcionModulo(String descripcionModulo) {
+        this.descripcionModulo = descripcionModulo;
     }
 
     public Date getVigencia() {
@@ -67,5 +69,13 @@ public class ExcepcionesEquivalenciaPractica {
 
     public void setFinVigencia(Date finVigencia) {
         this.finVigencia = finVigencia;
+    }
+
+    public String getNivelAutorizacion() {
+        return nivelAutorizacion;
+    }
+
+    public void setNivelAutorizacion(String nivelAutorizacion) {
+        this.nivelAutorizacion = nivelAutorizacion;
     }
 }

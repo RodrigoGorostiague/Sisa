@@ -2,10 +2,11 @@ package com.example.demo.entity.schemas.pami;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
+import java.io.Serializable;
+
 @Embeddable
-public class EquivalenciaPracticaPK {
+public class OldPracticasIgnoradasPK implements Serializable {
     @Column(name = "id_practica_pami")
     private String idPracticaPami;
     @Column(name = "id_practica_sisa")
