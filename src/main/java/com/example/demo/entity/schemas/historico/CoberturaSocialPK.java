@@ -1,11 +1,10 @@
-package com.api.sisa.entity.schemas.historico;
+package com.example.demo.entity.schemas.historico;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Embeddable
 public class CoberturaSocialPK implements Serializable {

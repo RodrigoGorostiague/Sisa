@@ -7,18 +7,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "carpetahc", schema = "historico")
-public class CarpetaHc {
+public class CarpetaHcHistorico {
     @EmbeddedId
-    private CarpetaHcPK id;
+    private CarpetaHcHistoricoPK id;
     private String usuario;
     @Column(name = "estadoviejo")
     private String estadoViejo;
 
-    public CarpetaHcPK getId() {
+    public CarpetaHcHistoricoPK getId() {
         return id;
     }
 
-    public void setId(CarpetaHcPK id) {
+    public void setId(CarpetaHcHistoricoPK id) {
         this.id = id;
     }
 

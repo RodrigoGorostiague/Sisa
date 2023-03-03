@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "auditoria", name = "perfil")
-public class Perfil {
+public class PerfilAud {
     @EmbeddedId
     private PerfilPK id;
     private String operacion;

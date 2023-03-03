@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Embeddable
-public class CoberturaSocialPK implements Serializable {
+public class CoberturaSocialAudPK implements Serializable {
     @Column(name = "idpaciente")
     private Integer idPaciente;
     @Column(name = "codigoobrasocial")

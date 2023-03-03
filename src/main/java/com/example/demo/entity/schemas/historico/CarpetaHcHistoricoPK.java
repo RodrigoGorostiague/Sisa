@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Embeddable
-public class CarpetaHcPK implements Serializable {
+public class CarpetaHcHistoricoPK implements Serializable {
     private LocalDateTime fecha;
     @Column(name = "historiaclinica")
     private Integer historiaclinica;

@@ -7,19 +7,19 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "auditoria", name = "coberturasocial")
-public class CoberturaSocial {
+public class CoberturaSocialAud {
     @EmbeddedId
-    private CoberturaSocialPK id;
+    private CoberturaSocialAudPK id;
     private String usuario;
     private String operacion;
     @Column(name = "observaciones")
     private String observacion;
 
-    public CoberturaSocialPK getId() {
+    public CoberturaSocialAudPK getId() {
         return id;
     }
 
-    public void setId(CoberturaSocialPK id) {
+    public void setId(CoberturaSocialAudPK id) {
         this.id = id;
     }
 
