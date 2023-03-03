@@ -10,9 +10,9 @@ import java.util.Date;
 
 @Entity
 @Table(schema = "auditoria", name = "registrohorarioaps")
-public class RegistroHorarioAps {
+public class RegistroHorarioApsAud {
     @EmbeddedId
-    private RegistroHorarioApsPK id;
+    private RegistroHorarioApsAudPK id;
     private String legajo;
     private Date fecha;
     private LocalDateTime hora;
@@ -20,11 +20,11 @@ public class RegistroHorarioAps {
     private String entradaSalida;
     private String operacion;
 
-    public RegistroHorarioApsPK getId() {
+    public RegistroHorarioApsAudPK getId() {
         return id;
     }
 
-    public void setId(RegistroHorarioApsPK id) {
+    public void setId(RegistroHorarioApsAudPK id) {
         this.id = id;
     }
 

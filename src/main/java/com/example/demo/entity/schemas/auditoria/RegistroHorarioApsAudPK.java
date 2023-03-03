@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Embeddable
-public class RegistroHorarioApsPK implements Serializable {
+public class RegistroHorarioApsAudPK implements Serializable {
     @Column(name = "fechaoperacion")
     private LocalDateTime fechaOperacion;
     private String usuario;
