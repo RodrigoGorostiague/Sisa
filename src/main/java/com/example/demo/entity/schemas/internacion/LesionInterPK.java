@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
-public class LesionPK implements Serializable {
+public class LesionInterPK implements Serializable {
     @Column(name = "nrointernacion")
     private Integer nroInternacion;
     @Column(name = "codigolesion")

@@ -6,16 +6,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "prestacion",schema = "internacion")
-public class Prestacion {
+public class PrestacionInter {
     @EmbeddedId
-    private PrestacionPK id;
+    private PrestacionInterPK id;
     private String importancia;
 
-    public PrestacionPK getId() {
+    public PrestacionInterPK getId() {
         return id;
     }
 
-    public void setId(PrestacionPK id) {
+    public void setId(PrestacionInterPK id) {
         this.id = id;
     }
 

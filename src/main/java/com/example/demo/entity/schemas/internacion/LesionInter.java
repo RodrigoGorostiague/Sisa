@@ -10,9 +10,9 @@ import java.util.Date;
 
 @Entity
 @Table(schema = "internacion", name = "lesion")
-public class Lesion {
+public class LesionInter {
     @EmbeddedId
-    private LesionPK id;
+    private LesionInterPK id;
     private Date fecha;
     private LocalDateTime hora;
     @Column(name = "producidapor")
@@ -21,11 +21,11 @@ public class Lesion {
     private String producidaEn;
     private String importancia;
 
-    public LesionPK getId() {
+    public LesionInterPK getId() {
         return id;
     }
 
-    public void setId(LesionPK id) {
+    public void setId(LesionInterPK id) {
         this.id = id;
     }
 
