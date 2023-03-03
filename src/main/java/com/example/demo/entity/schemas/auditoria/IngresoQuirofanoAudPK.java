@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class IngresoQuirofanoPK implements Serializable {
+public class IngresoQuirofanoAudPK implements Serializable {
     @Column(name = "idpaciente")
     private Integer idPaciente;
     @Column(name = "fechaing")
