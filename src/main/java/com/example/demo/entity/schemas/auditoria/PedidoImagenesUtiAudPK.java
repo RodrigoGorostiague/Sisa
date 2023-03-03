@@ -4,17 +4,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Embeddable
-public class PedidoImagenesInternacionPK implements Serializable {
+public class PedidoImagenesUtiAudPK implements Serializable {
     private LocalDateTime fecha;
-    @Column(name = "nrointernacion")
-    private Integer nroInternacion;
+    @Column(name = "nrouti")
+    private Integer nroUti;
     @Column(name = "fechapi")
     private Date fechaPi;
-    @Column(name = "harapi")
+    @Column(name = "horapi")
     private LocalDateTime horaPi;
 
     public LocalDateTime getFecha() {
@@ -25,12 +25,12 @@ public class PedidoImagenesInternacionPK implements Serializable {
         this.fecha = fecha;
     }
 
-    public Integer getNroInternacion() {
-        return nroInternacion;
+    public Integer getNroUti() {
+        return nroUti;
     }
 
-    public void setNroInternacion(Integer nroInternacion) {
-        this.nroInternacion = nroInternacion;
+    public void setNroUti(Integer nroUti) {
+        this.nroUti = nroUti;
     }
 
     public Date getFechaPi() {

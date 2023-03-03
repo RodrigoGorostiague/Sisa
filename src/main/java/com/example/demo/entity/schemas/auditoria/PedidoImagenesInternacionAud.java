@@ -6,17 +6,17 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "auditoria", name = "pedidoimagenesinternacion")
-public class PedidoImagenesInternacion {
+public class PedidoImagenesInternacionAud {
     @EmbeddedId
-    private PedidoImagenesInternacionPK id;
+    private PedidoImagenesInternacionAudPK id;
     private String usuario;
     private String operacion;
 
-    public PedidoImagenesInternacionPK getId() {
+    public PedidoImagenesInternacionAudPK getId() {
         return id;
     }
 
-    public void setId(PedidoImagenesInternacionPK id) {
+    public void setId(PedidoImagenesInternacionAudPK id) {
         this.id = id;
     }
 
