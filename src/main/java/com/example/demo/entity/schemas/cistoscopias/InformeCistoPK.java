@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Embeddable
-public class InformePK implements Serializable {
+public class InformeCistoPK implements Serializable {
     private Date fecha;
     @Column(name = "idpaciente")
     private Integer idPaciente;

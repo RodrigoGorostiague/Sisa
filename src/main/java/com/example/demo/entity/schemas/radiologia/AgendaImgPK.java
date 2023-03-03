@@ -1,4 +1,4 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.radiologia;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -9,33 +9,16 @@ import java.util.Date;
 
 @Embeddable
 public class AgendaImgPK implements Serializable {
-    private LocalDateTime fecha;
-    private String usuario;
     private String uniat;
     private String sector;
-    private String medicoradiologo;
+    @Column(name = "medicoradiologo")
+    private String medicoRadiologo;
     @Column(name = "fechainiciovigencia")
     private Date fechaInicioVigencia;
     @Column(name = "diasemana")
     private Integer diaSemana;
-    @Column(name = "horacomienzo")
-    private  LocalDateTime horaComienzo;
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+    @Column(name = "horacomienz")
+    private LocalDateTime horaComienz;
 
     public String getUniat() {
         return uniat;
@@ -53,12 +36,12 @@ public class AgendaImgPK implements Serializable {
         this.sector = sector;
     }
 
-    public String getMedicoradiologo() {
-        return medicoradiologo;
+    public String getMedicoRadiologo() {
+        return medicoRadiologo;
     }
 
-    public void setMedicoradiologo(String medicoradiologo) {
-        this.medicoradiologo = medicoradiologo;
+    public void setMedicoRadiologo(String medicoRadiologo) {
+        this.medicoRadiologo = medicoRadiologo;
     }
 
     public Date getFechaInicioVigencia() {
@@ -77,11 +60,11 @@ public class AgendaImgPK implements Serializable {
         this.diaSemana = diaSemana;
     }
 
-    public LocalDateTime getHoraComienzo() {
-        return horaComienzo;
+    public LocalDateTime getHoraComienz() {
+        return horaComienz;
     }
 
-    public void setHoraComienzo(LocalDateTime horaComienzo) {
-        this.horaComienzo = horaComienzo;
+    public void setHoraComienz(LocalDateTime horaComienz) {
+        this.horaComienz = horaComienz;
     }
 }

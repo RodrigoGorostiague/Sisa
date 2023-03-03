@@ -1,4 +1,4 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.radiologia;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -8,33 +8,16 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class TurnoAsignadoImgPK implements Serializable {
-    private LocalDateTime fecha;
-    private String usuario;
+public class TurnoLibreImgPK implements Serializable {
     private String sector;
     @Column(name = "medicoradiologo")
     private String medicoRadiologo;
-    @Column(name = "fechaturno")
-    private Date fechaTurno;
+    private Date fecha;
     private String uniat;
     @Column(name = "nroturno")
     private Integer nroTurno;
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+    @Column(name = "horacomienzo")
+    private LocalDateTime horaComienzo;
 
     public String getSector() {
         return sector;
@@ -52,12 +35,12 @@ public class TurnoAsignadoImgPK implements Serializable {
         this.medicoRadiologo = medicoRadiologo;
     }
 
-    public Date getFechaTurno() {
-        return fechaTurno;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setFechaTurno(Date fechaTurno) {
-        this.fechaTurno = fechaTurno;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public String getUniat() {
@@ -76,4 +59,11 @@ public class TurnoAsignadoImgPK implements Serializable {
         this.nroTurno = nroTurno;
     }
 
+    public LocalDateTime getHoraComienzo() {
+        return horaComienzo;
+    }
+
+    public void setHoraComienzo(LocalDateTime horaComienzo) {
+        this.horaComienzo = horaComienzo;
+    }
 }

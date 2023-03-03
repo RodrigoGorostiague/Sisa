@@ -6,16 +6,16 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "auditoria", name = "agendaimg")
-public class AgendaImg {
+public class AgendaImgAud {
     @EmbeddedId
-    private AgendaImgPK id;
+    private AgendaImgAudPK id;
     private String operacion;
 
-    public AgendaImgPK getId() {
+    public AgendaImgAudPK getId() {
         return id;
     }
 
-    public void setId(AgendaImgPK id) {
+    public void setId(AgendaImgAudPK id) {
         this.id = id;
     }
 

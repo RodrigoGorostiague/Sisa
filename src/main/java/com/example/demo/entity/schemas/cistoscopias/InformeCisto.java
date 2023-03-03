@@ -7,9 +7,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(schema = "cistoscopias", name = "informe")
-public class Informe {
+public class InformeCisto {
     @EmbeddedId
-    private InformePK id;
+    private InformeCistoPK id;
     private String profesional;
     @Column(name = "textoinforme")
     private String textoInforme;

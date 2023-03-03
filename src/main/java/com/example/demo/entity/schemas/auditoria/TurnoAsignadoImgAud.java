@@ -7,18 +7,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "turnoasignadoimg", schema = "asistencia")
-public class TurnoAsignadoImg {
+public class TurnoAsignadoImgAud {
     @EmbeddedId
-    private TurnoAsignadoImgPK id;
+    private TurnoAsignadoImgAudPK id;
     private String operacion;
     @Column(name = "idpaciente")
     private Integer idPaciente;
 
-    public TurnoAsignadoImgPK getId() {
+    public TurnoAsignadoImgAudPK getId() {
         return id;
     }
 
-    public void setId(TurnoAsignadoImgPK id) {
+    public void setId(TurnoAsignadoImgAudPK id) {
         this.id = id;
     }
 
