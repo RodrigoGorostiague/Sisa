@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class LibretaPK implements Serializable {
+public class LibretaAudPK implements Serializable {
     private Date fecha;
     private String usuario;
     private LocalDateTime hora;

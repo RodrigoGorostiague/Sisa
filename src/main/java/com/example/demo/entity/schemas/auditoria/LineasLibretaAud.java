@@ -9,9 +9,9 @@ import java.util.Date;
 
 @Entity
 @Table(schema = "auditoria", name = "lineaslibreta")
-public class LineasLibreta {
+public class LineasLibretaAud {
     @EmbeddedId
-    private LineasLibretaPK id;
+    private LineasLibretaAudPK id;
     @Column(name = "fechaentrega")
     private Date fechaEntrega;
     private String operaciones;
@@ -23,11 +23,11 @@ public class LineasLibreta {
     @Column(name = "nombreempresa")
     private String nombreEmpresa;
 
-    public LineasLibretaPK getId() {
+    public LineasLibretaAudPK getId() {
         return id;
     }
 
-    public void setId(LineasLibretaPK id) {
+    public void setId(LineasLibretaAudPK id) {
         this.id = id;
     }
 
