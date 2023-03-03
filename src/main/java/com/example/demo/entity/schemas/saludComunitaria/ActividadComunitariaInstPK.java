@@ -1,21 +1,19 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.saludComunitaria;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Embeddable
-public class ActividadComunitariaPK implements Serializable {
+public class ActividadComunitariaInstPK implements Serializable {
     private Date fecha;
     private LocalDateTime hora;
-    private String profesional;
     @Column(name = "codigouniat")
     private String codigoUniat;
-    @Column(name = "fechaoperacion")
-    private LocalDateTime fechaOperacion;
+    private String institucion;
 
     public Date getFecha() {
         return fecha;
@@ -33,14 +31,6 @@ public class ActividadComunitariaPK implements Serializable {
         this.hora = hora;
     }
 
-    public String getProfesional() {
-        return profesional;
-    }
-
-    public void setProfesional(String profesional) {
-        this.profesional = profesional;
-    }
-
     public String getCodigoUniat() {
         return codigoUniat;
     }
@@ -49,11 +39,11 @@ public class ActividadComunitariaPK implements Serializable {
         this.codigoUniat = codigoUniat;
     }
 
-    public LocalDateTime getFechaOperacion() {
-        return fechaOperacion;
+    public String getInstitucion() {
+        return institucion;
     }
 
-    public void setFechaOperacion(LocalDateTime fechaOperacion) {
-        this.fechaOperacion = fechaOperacion;
+    public void setInstitucion(String institucion) {
+        this.institucion = institucion;
     }
 }

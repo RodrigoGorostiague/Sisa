@@ -8,15 +8,15 @@ import jakarta.persistence.Table;
 @Table(schema = "auditoria", name = "actividadcomunitariasalcom")
 public class ActividadComunitariaSalCom {
     @EmbeddedId
-    private ActividadComunitariaPK id;
+    private ActividadComunitariaAudPK id;
     private String operacion;
     private String usuario;
 
-    public ActividadComunitariaPK getId() {
+    public ActividadComunitariaAudPK getId() {
         return id;
     }
 
-    public void setId(ActividadComunitariaPK id) {
+    public void setId(ActividadComunitariaAudPK id) {
         this.id = id;
     }
 
