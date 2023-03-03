@@ -1,28 +1,19 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.sipa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class EmbarazoPK implements Serializable {
-    @Column(name = "fechaoperacion")
-    private LocalDateTime fechaOperacion;
+public class RecienNacidoSipaPK implements Serializable {
     @Column(name = "idpaciente")
     private Integer idPaciente;
     @Column(name = "fechaingresoplanilla")
     private Date fechaIngresoPlanilla;
-
-    public LocalDateTime getFechaOperacion() {
-        return fechaOperacion;
-    }
-
-    public void setFechaOperacion(LocalDateTime fechaOperacion) {
-        this.fechaOperacion = fechaOperacion;
-    }
+    @Column(name = "idpacientern")
+    private Integer idPacienteRn;
 
     public Integer getIdPaciente() {
         return idPaciente;
@@ -38,5 +29,13 @@ public class EmbarazoPK implements Serializable {
 
     public void setFechaIngresoPlanilla(Date fechaIngresoPlanilla) {
         this.fechaIngresoPlanilla = fechaIngresoPlanilla;
+    }
+
+    public Integer getIdPacienteRn() {
+        return idPacienteRn;
+    }
+
+    public void setIdPacienteRn(Integer idPacienteRn) {
+        this.idPacienteRn = idPacienteRn;
     }
 }

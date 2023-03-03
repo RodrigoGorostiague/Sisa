@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class PuerperioPK implements Serializable {
+public class TrabajoPartoAudPK implements Serializable {
     @Column(name = "fechaoperacion")
     private LocalDateTime fechaOperacion;
     private String usuario;
@@ -16,8 +16,7 @@ public class PuerperioPK implements Serializable {
     private Integer idPaciente;
     @Column(name = "fechaingresoplanilla")
     private Date fechaIngresoPlanilla;
-    private Date dia;
-    private LocalDateTime fecha;
+    private LocalDateTime hora;
 
     public LocalDateTime getFechaOperacion() {
         return fechaOperacion;
@@ -51,19 +50,11 @@ public class PuerperioPK implements Serializable {
         this.fechaIngresoPlanilla = fechaIngresoPlanilla;
     }
 
-    public Date getDia() {
-        return dia;
+    public LocalDateTime getHora() {
+        return hora;
     }
 
-    public void setDia(Date dia) {
-        this.dia = dia;
-    }
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
+    public void setHora(LocalDateTime hora) {
+        this.hora = hora;
     }
 }

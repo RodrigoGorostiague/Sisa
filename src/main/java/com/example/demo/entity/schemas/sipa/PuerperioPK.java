@@ -1,4 +1,4 @@
-package com.example.demo.entity.schemas.auditoria;
+package com.example.demo.entity.schemas.sipa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -8,31 +8,13 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Embeddable
-public class TrabajoPartoPK implements Serializable {
-    @Column(name = "fechaoperacion")
-    private LocalDateTime fechaOperacion;
-    private String usuario;
+public class PuerperioPK implements Serializable {
     @Column(name = "idpaciente")
     private Integer idPaciente;
     @Column(name = "fechaingresoplanilla")
     private Date fechaIngresoPlanilla;
+    private Date dia;
     private LocalDateTime hora;
-
-    public LocalDateTime getFechaOperacion() {
-        return fechaOperacion;
-    }
-
-    public void setFechaOperacion(LocalDateTime fechaOperacion) {
-        this.fechaOperacion = fechaOperacion;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public Integer getIdPaciente() {
         return idPaciente;
@@ -48,6 +30,14 @@ public class TrabajoPartoPK implements Serializable {
 
     public void setFechaIngresoPlanilla(Date fechaIngresoPlanilla) {
         this.fechaIngresoPlanilla = fechaIngresoPlanilla;
+    }
+
+    public Date getDia() {
+        return dia;
+    }
+
+    public void setDia(Date dia) {
+        this.dia = dia;
     }
 
     public LocalDateTime getHora() {

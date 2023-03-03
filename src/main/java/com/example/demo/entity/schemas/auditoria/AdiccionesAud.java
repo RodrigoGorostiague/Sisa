@@ -6,23 +6,31 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(schema = "auditoria", name = "trabajoparto")
-public class TrabajoParto {
+@Table(schema = "auditoria", name = "adicciones")
+public class AdiccionesAud {
     @EmbeddedId
-    private TrabajoPartoPK id;
-    private String operacion;
+    private AdiccionesAudPK id;
+    private String operaciones;
     @Column(name = "lugpartoabor")
     private String lugPartoAbor;
     private Integer hc;
     @Column(name = "gestasprevias")
     private Integer gestasPrevias;
 
-    public TrabajoPartoPK getId() {
+    public AdiccionesAudPK getId() {
         return id;
     }
 
-    public void setId(TrabajoPartoPK id) {
+    public void setId(AdiccionesAudPK id) {
         this.id = id;
+    }
+
+    public String getOperaciones() {
+        return operaciones;
+    }
+
+    public void setOperaciones(String operaciones) {
+        this.operaciones = operaciones;
     }
 
     public String getLugPartoAbor() {
