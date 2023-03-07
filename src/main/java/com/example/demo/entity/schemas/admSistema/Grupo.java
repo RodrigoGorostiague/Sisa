@@ -10,25 +10,18 @@ public class Grupo {
     @Id
     @Column(name = "idgrupo")
     private Integer idGrupo;
-    private String descripcuion;
-    @OneToMany(mappedBy = "id.idGrupo")
-    private List<GrupoMenu> grupoMenus;
-    @OneToMany(mappedBy = "grupo")
-    private List<PermisoUsuario> permisosUsuario;
+    private String descripcion;
+    @ManyToMany
+    @JoinTable(name = "grupomenu",schema = "admsistema",
+            joinColumns = @JoinColumn(name = "idgrupo"),
+            inverseJoinColumns = @JoinColumn(name = "idmenu"))
+    private List<Menu> grupoMenus;
 
-    public List<PermisoUsuario> getPermisosUsuario() {
-        return permisosUsuario;
-    }
-
-    public void setPermisosUsuario(List<PermisoUsuario> permisosUsuario) {
-        this.permisosUsuario = permisosUsuario;
-    }
-
-    public List<GrupoMenu> getGrupoMenus() {
+    public List<Menu> getGrupoMenus() {
         return grupoMenus;
     }
 
-    public void setGrupoMenus(List<GrupoMenu> grupoMenus) {
+    public void setGrupoMenus(List<Menu> grupoMenus) {
         this.grupoMenus = grupoMenus;
     }
 
@@ -40,11 +33,11 @@ public class Grupo {
         this.idGrupo = idGrupo;
     }
 
-    public String getDescripcuion() {
-        return descripcuion;
+    public String getdescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcuion(String descripcuion) {
-        this.descripcuion = descripcuion;
+    public void setdescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

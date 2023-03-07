@@ -12,8 +12,8 @@ public class ArbolMenu {
     private Integer orden;
     @ManyToMany
     @JoinColumns({
-            @JoinColumn(name="iditemmenupadre", referencedColumnName="iditemmenu"),
-            @JoinColumn(name="idmenupadre", referencedColumnName="idmenu")})
+            @JoinColumn(name="iditemmenu", referencedColumnName="iditemmenupadre"),
+            @JoinColumn(name="idmenu", referencedColumnName="idmenupadre")})
     private List<ArbolMenu> hijos;
 
     public ArbolMenuPK getId() {

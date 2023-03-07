@@ -17,17 +17,6 @@ public class ItemMenu {
     private String contenido;
     @Column(name = "caminoimagen")
     private String caminoImagen;
-    @OneToMany(mappedBy = "id.iditemmenu")
-    private List<ArbolMenu> arbolMenus;
-
-    public List<ArbolMenu> getArbolMenus() {
-        return arbolMenus;
-    }
-
-    public void setArbolMenus(List<ArbolMenu> arbolMenus) {
-        this.arbolMenus = arbolMenus;
-    }
-
     public String getIdItemMenu() {
         return idItemMenu;
     }

@@ -17,34 +17,6 @@ public class Menu {
     @ManyToOne
     @JoinColumn(name = "idmodulo", referencedColumnName = "idmodulo")
     private Modulo modulo;
-    @OneToMany(mappedBy = "id.idmenu")
-    private List<ArbolMenu> arbolMenus;
-    @OneToMany(mappedBy = "id.idMenu")
-    private List<GrupoMenu> grupoMenus;
-
-    public List<GrupoMenu> getGrupoMenus() {
-        return grupoMenus;
-    }
-
-    public void setGrupoMenus(List<GrupoMenu> grupoMenus) {
-        this.grupoMenus = grupoMenus;
-    }
-
-    public String getDisposicion() {
-        return disposicion;
-    }
-
-    public void setDisposicion(String disposicion) {
-        this.disposicion = disposicion;
-    }
-
-    public List<ArbolMenu> getArbolMenus() {
-        return arbolMenus;
-    }
-
-    public void setArbolMenus(List<ArbolMenu> arbolMenus) {
-        this.arbolMenus = arbolMenus;
-    }
 
     public String getIdMenu() {
         return idMenu;
@@ -70,11 +42,11 @@ public class Menu {
         this.descripcion = descripcion;
     }
 
-    public String getdisposicion() {
+    public String getDisposicion() {
         return disposicion;
     }
 
-    public void setdisposicion(String disposicion) {
+    public void setDisposicion(String disposicion) {
         this.disposicion = disposicion;
     }
 
@@ -85,4 +57,5 @@ public class Menu {
     public void setModulo(Modulo modulo) {
         this.modulo = modulo;
     }
+
 }
