@@ -1,5 +1,6 @@
 package com.example.demo.entity.schemas.admSistema;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,6 +18,9 @@ public class Menu {
     @ManyToOne
     @JoinColumn(name = "idmodulo", referencedColumnName = "idmodulo")
     private Modulo modulo;
+    @OneToMany(mappedBy = "id.idmenu")
+    @JsonManagedReference
+    private List<ArbolMenuRaiz> arbolMenus;
 
     public String getIdMenu() {
         return idMenu;
@@ -58,4 +62,11 @@ public class Menu {
         this.modulo = modulo;
     }
 
+    public List<ArbolMenuRaiz> getArbolMenus() {
+        return arbolMenus;
+    }
+
+    public void setArbolMenus(List<ArbolMenuRaiz> arbolMenus) {
+        this.arbolMenus = arbolMenus;
+    }
 }

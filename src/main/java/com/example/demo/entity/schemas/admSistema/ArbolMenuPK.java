@@ -1,5 +1,6 @@
 package com.example.demo.entity.schemas.admSistema;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -13,6 +14,7 @@ public class ArbolMenuPK implements Serializable {
     private ItemMenu iditemmenu;
     @ManyToOne
     @JoinColumn(name = "idmenu", referencedColumnName = "idmenu")
+    @JsonBackReference
     private Menu idmenu;
 
     public ItemMenu getIditemmenu() {
